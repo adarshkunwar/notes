@@ -1,10 +1,13 @@
 
+import React from "react"
 
 function first() {
   return (
-    <body>
-      <p>Hello</p>
-    </body>
+    <div>
+    <p>Hello</p>
+    </div>
+      
+    
   )
 }
 

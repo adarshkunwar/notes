@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/wathika-eng/notes",
   "name": "classnotes",
   "version": "0.1.0",
   "private": true,
@@ -14,8 +15,12 @@
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
+    
+
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -57,12 +62,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wathika-eng/classnotes.git"
+    "url": "git+https://github.com/wathika-eng/notes.git"
   },
   "author": "wathika",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wathika-eng/classnotes/issues"
-  },
-  "homepage": "https://github.com/wathika-eng/classnotes#readme"
+    "url": "https://github.com/wathika-eng/notes/issues"
+  }
+  
 }

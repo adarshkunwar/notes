@@ -1,0 +1,7 @@
+
+    function Prompt() {
+prompt("This is the Admin Page! For uploading NOTES")
+    }
+    
+
+export default Prompt

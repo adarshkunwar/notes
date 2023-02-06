@@ -31,7 +31,7 @@
 }
 
 header{
-    display:flex;
+    display:inline-block;
     align-items:center;
     justify-content: space-between;
     height:80px;
@@ -63,12 +63,91 @@ header .nav-btn{
     visibility: hidden;
     opacity: 0;
     font-size: 1.5rem;
+
 }
+#m{
+    visibility: hidden;
+}
+
 nav-close-btn{
     position: absolute;
     top:2rem;
     right:2rem;
     color: black;
+}
+.upbtn{
+    top:120px;
+    min-height: 200px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 15px;
+}
+.cloud{
+    color: rgb(0, 102, 26);
+    background: -webkit-linear-gradient(top,#099,#066);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    color: #4a89dc;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 130px;
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 6px;
+    transition: .5s;
+}
+.cloud:hover{
+    color: #066;
+}
+.pcloud{
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.selector{
+    font-weight: 900;
+    padding: 10px 16px;
+    font-size: 17px;
+    line-height: 1.33;
+    border-radius: 7px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    font-size: 25px;
+    color: var(--text-color);
+    border: #333;
+    background-color:#a79090;
+    transition: .5s;
+}
+.small{
+    margin-left: 12px;
+}
+.selector:hover{
+    background-color: whitesmoke;
+    color: black;
+    font-size: 30px;
+    box-shadow: rgba(3, 102, 214, 0.8) 0px 0px 0px 3px;
+    
+}
+
+.cloud2{
+    color:#333;
+    display: inline-block;
+    text-align: center;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #333;
+    background-color: aliceblue;
 }
 
 /*small screens*/
@@ -132,5 +211,11 @@ nav-close-btn{
         padding-top: 10px;
         z-index: 2;
         transition:eas right 0.9s;
+    }
+    #m{
+        bottom: 40px;
+        left:150px;
+        font-size:20px;
+        visibility: visible;
     }
 }

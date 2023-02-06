@@ -1,6 +1,6 @@
 import React from 'react'
 
-function body() {
+function bo() {
   return (
     <div>
         <p>Hey I am Wathika</p>
@@ -8,4 +8,4 @@ function body() {
   )
 }
 
-export default body
+export default bo

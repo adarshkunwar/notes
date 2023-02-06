@@ -1,10 +1,11 @@
 import {BrowserRouter as Routes, Router, Switch, Route} from 'react-router-dom';
 
-import './App.css';
+
 import './Components/header';
 import './Styles/main.css';
-import './Components/body';
+import './Components/bo';
 import './Components/footer';
+
 import Navbar from './Components/header';
 import first from './pages/one';
 import second from './pages/second';
@@ -19,25 +20,16 @@ function App() {
   return (
     <>
     < Navbar />
-    
-   
-    </>
-  );
-  <Routes>
-        <Route path="/" element={Navbar} />
-        <Route path="" element={first} />
-        <Route path="" element={ second } />
-        <Route path="" element={ three } />
+      <Routes>
+        <Route path="/" element={<first/>} />
+        <Route path="/1st yr" element={first} />
+        <Route path="/2nd yr" element={ second } />
+        <Route path="/3rd yr" element={ three } />
         <Route path="/4th yr" element={four } />
       </Routes>
-  (
     <body/>
+    </>
   );
-
-  (
-    <footer />
-  )
-
 }
 
 export default App;
