@@ -2,9 +2,8 @@ import { useRef } from "react";
 
 import {FaBars, FaCloudUploadAlt, FaFolder, FaMoon, FaTimes,} from 'react-icons/fa'
 
-import uploadd from "./scripts";
+import { useState } from 'react';
 
-import Prompt from "./welkam";
 
 import dark from "./script";
 
@@ -27,7 +26,7 @@ const showNavbar = () => {
 //////////////////////////////////webcontents///////////////////////////////
 return(
     <>
-<header onload={uploadd} >
+<header onload={Upload} >
     <h1 >Class Notes & Revision papers</h1>
     <nav  style={{right:'0px'}} ref={navRef} className="menu1">
         <Link to="/1st yr" >BBITM </Link>
@@ -56,7 +55,7 @@ return(
 </header>
 
 <div>
-<button onClick={uploadd} onchange={uploadd} className="upbtn">
+<button onClick={Upload} onchange={Upload} className="upbtn">
     <p className="pcloud" >Upload your notes here </p><span class="cloud"><FaCloudUploadAlt/></span>
     <button className="selector"  id="upload" multiple size="50" 
      
@@ -80,9 +79,55 @@ return(
 </div>
 </>
     );
-
-{{<Prompt message="This is the Admin Page!"/>}}
+   
 }
+
+//////jscode/////
+
+const Upload = () => {
+  const [text, setText] = useState('');
+
+  const handleUpload = (event) => {
+    const x = event.target;
+    let txt = '';
+    if ('files' in x) {
+      if (x.files.length === 0) {
+        txt = 'Select one or more files.';
+      } else {
+        for (let i = 0; i < x.files.length; i++) {
+          txt += `<br><strong>${i + 1}. file</strong><br>`;
+          const file = x.files[i];
+          if ('name' in file) {
+            txt += `name: ${file.name}<br>`;
+          }
+          if ('size' in file) {
+            txt += `size: ${file.size} bytes <br>`;
+          }
+        }
+      }
+    } else {
+      if (x.value === '') {
+        txt += 'Select one or more files.';
+      } else {
+        txt += 'The files property is not supported by your browser!';
+        txt += `<br>The path of the selected file: ${x.value}`;
+      }
+    }
+    setText(txt);
+  };
+return (
+    <div>
+      <input type="file" id="upload" onChange={handleUpload} />
+      <div dangerouslySetInnerHTML={{ __html: text }} />
+    </div>
+  );
+};
+
+
+////admin welcome//
+const AdminPage = () => {
+  return <div>This is the Admin Page!</div>;
+};
 
 
 //eslint-disable-next-line 

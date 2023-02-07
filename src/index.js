@@ -24,6 +24,8 @@ root.render(
     </BrowserRouter>
     </>
 );
+
+//eslint-disable-next-line
 const root2 = ReactDOM.createRoot2(document.getElementById('root2'));
 root2.render(
     <>
